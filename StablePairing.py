@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Apr 29 20:01:07 2021
+Created on Thu Apr 29 2021
 
 @author: Michael Lin
 """
