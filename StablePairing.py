@@ -20,6 +20,11 @@ class Student:
             raise AttributeError("Need to be a list")
 
     def _check(self, val):
+        """
+        Check for repetition in preference
+        :param val: preference list
+        :return: None or the preference list
+        """
         if len(set(val)) != len(val):
             return None
         else:
@@ -37,6 +42,11 @@ class Hospital:
             raise AttributeError("Need to be a list")
 
     def _check(self, val):
+        """
+        Check for repetition in preference
+        :param val: preference list
+        :return: None or the preference list
+        """
         if len(set(val)) != len(val):
             return None
         else:
@@ -73,13 +83,21 @@ class PairingSystem:
             raise AttributeError("Need to be a list of hospital")
 
     def _transform(self, val):
-        # Have to transform the list into dictionary for better accessibility
+        """
+        Transform the list into dictionary for better accessibility
+        :param val: student list or hospital list
+        :return: Dictionary with id as key and either Student or Hospital as value
+        """
         output = {}
         for v in val:
             output[v.id] = v
         return output
 
     def stable_pairing(self):
+        """
+        Implementation of Gale-Shipley stable pairing algorithm
+        :return: Stable pairing
+        """
         queue = list(self.student_list.values())
         res_pairing = {}
         while queue:
